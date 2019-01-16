@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:context=".MainActivity">
+
+    <RelativeLayout
+            android:padding="20dp"
+            android:id="@+id/firstLay"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <Button
+                android:padding="10dp"
+                android:id="@+id/chooseDateBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Choose Date"
+                android:layout_centerHorizontal="true"
+        />
+
+        <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/chooseDateBtn"
+                android:layout_height="wrap_content">
+
+            <TextView
+                    android:id="@+id/sel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:textColor="@android:color/black"
+                    android:text="Selected Date: "/>
+
+            <TextView
+                    android:id="@+id/selectedDateTextView"
+                    android:layout_toRightOf="@+id/sel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/mycolor"
+                    android:layout_centerHorizontal="true"
+                    android:text="hello world "
+            />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+            android:layout_below="@+id/firstLay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp">
+
+
+        <Button
+                style="@style/UIButton2"
+                android:id="@+id/addNewExpense"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Expense"
+                android:textAllCaps="false"
+                android:textSize="17dp"
+                android:padding="15dp"
+                android:layout_centerHorizontal="true"/>
+
+
+        <Button
+                style="@style/UIButton2"
+                android:layout_below="@+id/addNewExpense"
+                android:id="@+id/viewExpenses"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Current Month Expenses"
+                android:textAllCaps="false"
+                android:textSize="18dp"
+                android:layout_marginTop="10dp"
+                android:padding="17dp"
+                android:layout_centerHorizontal="true"/>
+
+        <Button
+                android:background="@color/colorAccent"
+                android:id="@+id/viewExpensesByMonth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="View Expenses By Month"
+                android:textAllCaps="false"
+                android:textSize="18dp"
+                android:padding="20dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
