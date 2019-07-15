@@ -1,11 +1,10 @@
-package com.example.expenseapp
+package com.example.expenseapp.activities
 
 import android.app.Activity
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.content.Intent
 import android.os.Handler
-import android.support.v4.os.HandlerCompat.postDelayed
+import com.example.expenseapp.R
 
 
 class SplashActivity : Activity() {

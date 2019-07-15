@@ -9,7 +9,7 @@
             android:roundIcon="@drawable/app_icon"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".SplashActivity">
+        <activity android:name=".activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -17,17 +17,17 @@
             </intent-filter>
         </activity>
         <activity
-                android:name=".MainActivity"
+                android:name=".activities.MainActivity"
                 android:launchMode="singleTop"/>
         <activity
-                android:name=".ViewExpensesActivity"
+                android:name=".activities.ViewExpensesActivity"
                 android:label="Current Month"
-                android:parentActivityName=".MainActivity">
+                android:parentActivityName=".activities.MainActivity">
             <meta-data
                     android:name="android.support.PARENT_ACTIVITY"
-                    android:value=".MainActivity"/>
+                    android:value=".activities.MainActivity"/>
         </activity>
-        <activity android:name=".ExpensesByMonth.ExpensesByMonthActivity">
+        <activity android:name=".activities.ExpensesByMonthActivity">
         </activity>
     </application>
 

@@ -1,4 +1,4 @@
-package com.example.expenseapp.ExpensesByMonth
+package com.example.expenseapp
 
 class DataClassByMonth {
 

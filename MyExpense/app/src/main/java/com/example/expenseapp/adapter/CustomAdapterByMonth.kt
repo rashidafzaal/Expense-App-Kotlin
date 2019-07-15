@@ -1,4 +1,4 @@
-package com.example.expenseapp.ExpensesByMonth
+package com.example.expenseapp.adapter
 
 import android.app.Activity
 import android.content.Context
@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.TextView
+import com.example.expenseapp.DataClassByMonth
 import com.example.expenseapp.R
 
 class CustomAdapterByMonth : ArrayAdapter<DataClassByMonth> {

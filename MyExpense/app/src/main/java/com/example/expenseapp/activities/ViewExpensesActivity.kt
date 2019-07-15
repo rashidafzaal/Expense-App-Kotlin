@@ -1,16 +1,19 @@
-package com.example.expenseapp
+package com.example.expenseapp.activities
 
 import android.content.DialogInterface
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
 import android.view.Menu
-import android.view.MenuItem
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ListView
 import android.widget.TextView
 import android.widget.Toast
+import com.example.expenseapp.adapter.CustomAdapter
+import com.example.expenseapp.DataClass
+import com.example.expenseapp.DatabaseHandler
+import com.example.expenseapp.R
 
 
 class ViewExpensesActivity : AppCompatActivity(), AdapterView.OnItemLongClickListener{
@@ -49,7 +52,8 @@ class ViewExpensesActivity : AppCompatActivity(), AdapterView.OnItemLongClickLis
     }
 
     private fun setListView(entriesArrayList: ArrayList<DataClass>) {
-        myAdapter = CustomAdapter(this, R.layout.row_expenses, entriesArrayList)
+        myAdapter =
+            CustomAdapter(this, R.layout.row_expenses, entriesArrayList)
         myListview.adapter = myAdapter
         myListview.setOnItemLongClickListener(this)
 

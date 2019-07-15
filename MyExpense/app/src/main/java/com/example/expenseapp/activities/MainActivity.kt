@@ -1,4 +1,4 @@
-package com.example.expenseapp
+package com.example.expenseapp.activities
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -15,7 +15,9 @@ import java.util.*
 import android.content.Intent
 import android.view.Menu
 import android.view.MenuItem
-import com.example.expenseapp.ExpensesByMonth.ExpensesByMonthActivity
+import com.example.expenseapp.DataClass
+import com.example.expenseapp.DatabaseHandler
+import com.example.expenseapp.R
 import java.io.Serializable
 
 
@@ -29,6 +31,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     lateinit var mAlertDialog: AlertDialog
     lateinit var cal: Calendar
+    lateinit var passedMonth: String
 
     var databaseHandler: DatabaseHandler? = null
 
@@ -67,6 +70,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         var strDate: String = mDay.toString() + "-" + mMonth.toString() + "-" + mYear.toString()
         selectedDateTextView.setText(strDate)
+        passedMonth = mMonth
 
     }
 
@@ -78,6 +82,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         val myFormat = "d-MMM-yyyy" // mention the format you need
         val sdf = SimpleDateFormat(myFormat, Locale.US)
         selectedDateTextView.text = sdf.format(cal.time)
+        passedMonth = cal.getDisplayName(Calendar.MONTH,Calendar.SHORT,Locale.US)
 
     }
 
@@ -90,11 +95,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 //get all data
                 var entryArrayList = databaseHandler!!.getAllUsers()
                 //filter according to current month
-                cal = Calendar.getInstance()
-                val mMonth = cal.getDisplayName(Calendar.MONTH,Calendar.SHORT,Locale.US)
+//                cal = Calendar.getInstance()
+//                val mMonth = cal.getDisplayName(Calendar.MONTH,Calendar.SHORT,Locale.US)
                 var filteredArrList = arrayListOf<DataClass>()
                 for (item in entryArrayList) {
-                    if (item.expenseDate.contains(mMonth)) {
+                    if (item.expenseDate.contains(passedMonth)) {
                         filteredArrList.add(item)
                     }
                 }

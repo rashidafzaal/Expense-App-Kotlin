@@ -1,13 +1,13 @@
-package com.example.expenseapp.ExpensesByMonth
+package com.example.expenseapp.activities
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ListView
 import android.widget.TextView
 import com.example.expenseapp.DatabaseHandler
+import com.example.expenseapp.adapter.CustomAdapterByMonth
+import com.example.expenseapp.DataClassByMonth
 import com.example.expenseapp.R
-import java.util.*
-import kotlin.collections.ArrayList
 
 class ExpensesByMonthActivity : AppCompatActivity() {
 
@@ -31,18 +31,30 @@ class ExpensesByMonthActivity : AppCompatActivity() {
     var  totalNov: Int = 0
     var  totalDec: Int = 0
 
-    var obj1:DataClassByMonth = DataClassByMonth()
-    var obj2:DataClassByMonth = DataClassByMonth()
-    var obj3:DataClassByMonth = DataClassByMonth()
-    var obj4:DataClassByMonth = DataClassByMonth()
-    var obj5:DataClassByMonth = DataClassByMonth()
-    var obj6:DataClassByMonth = DataClassByMonth()
-    var obj7:DataClassByMonth = DataClassByMonth()
-    var obj8:DataClassByMonth = DataClassByMonth()
-    var obj9:DataClassByMonth = DataClassByMonth()
-    var obj10:DataClassByMonth = DataClassByMonth()
-    var obj11:DataClassByMonth = DataClassByMonth()
-    var obj12:DataClassByMonth = DataClassByMonth()
+    var obj1: DataClassByMonth =
+        DataClassByMonth()
+    var obj2: DataClassByMonth =
+        DataClassByMonth()
+    var obj3: DataClassByMonth =
+        DataClassByMonth()
+    var obj4: DataClassByMonth =
+        DataClassByMonth()
+    var obj5: DataClassByMonth =
+        DataClassByMonth()
+    var obj6: DataClassByMonth =
+        DataClassByMonth()
+    var obj7: DataClassByMonth =
+        DataClassByMonth()
+    var obj8: DataClassByMonth =
+        DataClassByMonth()
+    var obj9: DataClassByMonth =
+        DataClassByMonth()
+    var obj10: DataClassByMonth =
+        DataClassByMonth()
+    var obj11: DataClassByMonth =
+        DataClassByMonth()
+    var obj12: DataClassByMonth =
+        DataClassByMonth()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -129,7 +141,8 @@ class ExpensesByMonthActivity : AppCompatActivity() {
 
 
 
-        myAdapter = CustomAdapterByMonth(this, R.layout.row_expenses, monthArrList)
+        myAdapter =
+            CustomAdapterByMonth(this, R.layout.row_expenses, monthArrList)
         myListview.adapter = myAdapter
 
     }
