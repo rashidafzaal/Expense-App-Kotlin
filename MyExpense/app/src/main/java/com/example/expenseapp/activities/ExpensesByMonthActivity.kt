@@ -1,7 +1,10 @@
 package com.example.expenseapp.activities
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.AdapterView
 import android.widget.ListView
 import android.widget.TextView
 import com.example.expenseapp.DatabaseHandler
@@ -9,7 +12,8 @@ import com.example.expenseapp.adapter.CustomAdapterByMonth
 import com.example.expenseapp.DataClassByMonth
 import com.example.expenseapp.R
 
-class ExpensesByMonthActivity : AppCompatActivity() {
+class ExpensesByMonthActivity : AppCompatActivity(), AdapterView.OnItemClickListener{
+
 
     var databaseHandler: DatabaseHandler? = null
     lateinit var myListview: ListView
@@ -141,9 +145,20 @@ class ExpensesByMonthActivity : AppCompatActivity() {
 
 
 
-        myAdapter =
-            CustomAdapterByMonth(this, R.layout.row_expenses, monthArrList)
+        myAdapter = CustomAdapterByMonth(this, R.layout.row_expenses, monthArrList)
         myListview.adapter = myAdapter
 
+        myListview.onItemClickListener = this;
+
+    }
+    override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+
+        val monthName = view?.findViewById(R.id.row_monthName) as TextView
+        var trimmedMonth = monthName.text.toString().substring(0,3)
+
+        val i = Intent(this@ExpensesByMonthActivity, ViewExpensesActivity::class.java)
+        i.putExtra("comeFromExpensesByMonth", "yes");
+        i.putExtra("monthName", trimmedMonth);
+        startActivity(i)
     }
 }
